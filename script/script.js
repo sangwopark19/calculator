@@ -17,6 +17,8 @@ function divide(a, b) {
 let firstNum;
 let operator;
 let secondNum;
+let displayValue = "";
+const main = document.querySelector("main");
 
 function operate(firstNum, operator, secondNum) {
   if (operator === "+") {
@@ -29,3 +31,27 @@ function operate(firstNum, operator, secondNum) {
     divide(a, b);
   }
 }
+
+function showDisplay(num) {
+  const display = main.querySelector("#display");
+  displayValue += num;
+  display.textContent = displayValue;
+}
+
+main.addEventListener("click", (e) => {
+  let id = e.target.id;
+
+  switch (id) {
+    case "add":
+      break;
+    case "subtract":
+      break;
+    case "multiply":
+      break;
+    case "divide":
+      break;
+    default:
+      showDisplay(id);
+      break;
+  }
+});
